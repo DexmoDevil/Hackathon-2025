@@ -1,0 +1,24 @@
+/* Hoja de Estilos Corporativa - Validador Sioma
+*/
+
+:root {
+    /* Paleta principal de la imagen (CSS HEX) */
+    --sioma-primary: #B80019;
+    --sioma-gray-border: #CFCCD0;
+    --sioma-gray-bg-light: #ECECEC;
+    --sioma-gray-bg: #EEEEEE;
+    --sioma-text-dark: #000000;
+
+    /* Paleta semántica (Conservada para UX) */
+    --sioma-success: #1A5F0C; 
+    --sioma-error: #980527; 
+    --sioma-focus: #005A9C; 
+}
+
+/* Ajuste para que el mapa Leaflet 
+  ocupe el 100% de su contenedor.
+*/
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
