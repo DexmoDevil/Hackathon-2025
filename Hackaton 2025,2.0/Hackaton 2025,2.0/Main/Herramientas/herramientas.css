@@ -1,0 +1,190 @@
+/* ======================================
+   VARIABLES
+   ====================================== */
+   :root {
+    --sioma-primary: #2563eb;
+    --color-primary: #d32f2f;       
+    --color-primary-dark: #b71c1c;
+    --color-light: #ffffff;
+    --color-gray: #f8f8f8;
+  }
+  
+  /* ======================================
+     BASE
+     ====================================== */
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #mapa-visualizador {
+    height: 100%;
+    width: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ======================================
+     NAVBAR
+     ====================================== */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+  }
+  
+  /* Logo */
+  header.navbar .logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Lista de enlaces */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  /* Enlaces */
+  .nav-links a {
+    color: var(--color-light);
+    font-weight: 500;
+    transition: color 0.25s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--color-gray);
+  }
+  
+  /* Botón Acceder */
+  .btn-nav {
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    transition: all 0.25s ease;
+  }
+  
+  .btn-nav:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-light);
+  }
+  
+  /* ======================================
+     MENÚ HAMBURGUESA (MÓVIL)
+     ====================================== */
+  .menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+  }
+  
+  .menu-btn .burger,
+  .menu-btn .burger::before,
+  .menu-btn .burger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-light);
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  
+  .menu-btn .burger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .menu-btn .burger::before {
+    content: "";
+    top: -7px;
+    left: 0;
+  }
+  
+  .menu-btn .burger::after {
+    content: "";
+    top: 7px;
+    left: 0;
+  }
+  
+  /* Estado abierto */
+  .nav-open .menu-btn .burger {
+    background: transparent;
+  }
+  
+  .nav-open .menu-btn .burger::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .nav-open .menu-btn .burger::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* ======================================
+     RESPONSIVE
+     ====================================== */
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background-color: var(--color-light);
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 4rem 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+  
+    .nav-open .nav-links {
+      right: 0;
+    }
+  
+    .nav-links a {
+      color: var(--color-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  
+    .btn-nav {
+      background-color: var(--color-primary);
+      color: var(--color-light);
+    }
+  }
+  
+  /* Evitar scroll al abrir menú */
+  html.nav-open,
+  body.nav-open {
+    overflow: hidden;
+  }
+  

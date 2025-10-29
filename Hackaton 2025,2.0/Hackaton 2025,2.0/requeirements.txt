@@ -1,0 +1,9 @@
+pandas
+geopy
+scikit-learn
+numpy
+openpyxl
+ttkbootstrap
+pillow
+requests
+flask

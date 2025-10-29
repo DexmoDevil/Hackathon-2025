@@ -1,0 +1,353 @@
+/* ======================================
+   PALETA PRINCIPAL (Rojo y Blanco)
+   ====================================== */
+   :root {
+    --color-primary: #d32f2f; /* Rojo principal */
+    --color-primary-dark: #b71c1c;
+    --color-light: #ffffff;
+    --color-dark: #111827;
+    --color-gray: #f8f8f8;
+    --color-text: #333333;
+  }
+  
+  /* ======================================
+     RESETEO Y BASE
+     ====================================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-gray);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ======================================
+     NAVBAR SUPERIOR
+     ====================================== */
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: var(--color-primary);
+    color: var(--color-light);
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  /* NAV LINKS */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    font-weight: 500;
+    color: var(--color-light);
+    transition: all 0.25s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--color-gray);
+  }
+  
+  /* Botón de acción */
+  .btn-nav {
+    background: var(--color-light);
+    color: var(--color-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.25s ease;
+  }
+  
+  .btn-nav:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-light);
+  }
+  
+  /* ======================================
+     MENÚ HAMBURGUESA (solo móvil)
+     ====================================== */
+  .menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+  }
+  
+  .menu-btn .burger,
+  .menu-btn .burger::before,
+  .menu-btn .burger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-light);
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  
+  .menu-btn .burger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .menu-btn .burger::before {
+    content: "";
+    top: -7px;
+    left: 0;
+  }
+  .menu-btn .burger::after {
+    content: "";
+    top: 7px;
+    left: 0;
+  }
+  
+  /* Estado abierto */
+  .nav-open .menu-btn .burger {
+    background: transparent;
+  }
+  .nav-open .menu-btn .burger::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-open .menu-btn .burger::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* ======================================
+     HERO / CABECERA
+     ====================================== */
+  .hero {
+    position: relative;
+    text-align: center;
+    color: var(--color-light);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    padding: 8rem 2rem 6rem;
+    overflow: hidden;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero button {
+    background: var(--color-light);
+    color: var(--color-primary-dark);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .hero button:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-light);
+  }
+  
+  /* Wave decorativa */
+  .wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: url('https://svgshare.com/i/15hW.svg') no-repeat bottom center;
+    background-size: cover;
+    transform: scaleX(-1);
+  }
+  
+  /* ======================================
+     SECCIONES GENERALES
+     ====================================== */
+  section {
+    padding: 5rem 3rem;
+    text-align: center;
+  }
+  
+  .about {
+    background-color: var(--color-light);
+    color: var(--color-text);
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .about p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  
+  .about button {
+    background: var(--color-primary);
+    color: var(--color-light);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .about button:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  /* ======================================
+     SERVICIOS / CARDS
+     ====================================== */
+  .services {
+    background: var(--color-gray);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background: var(--color-light);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h3 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ======================================
+     CTA FINAL
+     ====================================== */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-light);
+    padding: 4rem 2rem;
+  }
+  
+  .cta button {
+    background: var(--color-light);
+    color: var(--color-primary-dark);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+  }
+  
+  .cta button:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-light);
+  }
+  
+  /* ======================================
+     RESPONSIVE DESIGN
+     ====================================== */
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 80%;
+      max-width: 320px;
+      background: var(--color-light);
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 4rem 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+  
+    .nav-open .nav-links {
+      right: 0;
+    }
+  
+    .nav-links a {
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  
+    .btn-nav {
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+  
+    .hero {
+      padding: 5rem 1.5rem 4rem;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    section {
+      padding: 3rem 1.5rem;
+    }
+  
+    .wave {
+      display: none;
+    }
+  }
+  
+  /* Evitar scroll al abrir menú */
+  html.nav-open,
+  body.nav-open {
+    overflow: hidden;
+  }
+  
+  
